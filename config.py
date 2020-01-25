@@ -1,7 +1,7 @@
 from telebot import types
 from dyct import d_hydro, d_drugs, d_leaders
 
-token = '1048025157:AAEZySNCLaqmOJsBN8ywAJZBzEJim2UjFo4'
+token = '1028529844:AAGa946n3V_L4RP4kYio2IvJlIbh_OWHxZQ'
 
 def create_menu(menu):
 
