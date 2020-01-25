@@ -4,7 +4,7 @@ import config
 import random
 
 from telebot import types
-from config import create_menu, create_menu_leaders, create_menu_detail, items
+from config import create_menu, create_main_menu, create_menu_detail, items
 from dyct import d_hydro, d_mis, d_set, d_drugs, d_leaders
 
 
@@ -21,7 +21,7 @@ text_messages = {
         u'|УСИЛИТЕЛИ| - получить карты усилителей\n'
         u'|ТАКТИКИ| - получить карты тактик\n'
         u'|ПРАВИЛА| - скачать актуальные правила\n'
-        u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстновки\n',
+        u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстановки\n',
     
     'help':
         u'С предложениям по улучшению, а также об ошибках\n'
@@ -144,7 +144,7 @@ def get_drugs(message):
 # Функция навигации по усилителям
 
 	menu = list(d_drugs.keys())
-	markup = create_menu_detail(menu)
+	markup = create_main_menu(menu)
 	bot.send_message(message.from_user.id, 'Выбери усилитель:', reply_markup=markup)
 
 def get_drugs_all(message):
@@ -159,7 +159,7 @@ def get_tactics(message):
 # Функция навигации по тактикам лидеров фракций
 
 	menu = list(d_leaders.keys())
-	markup = create_menu_leaders(menu)
+	markup = create_main_menu(menu)
 	bot.send_message(message.from_user.id, 'Выбери лидера:', reply_markup=markup)
 
 def get_all_leaders(message):

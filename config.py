@@ -1,7 +1,7 @@
 from telebot import types
 from dyct import d_hydro, d_drugs, d_leaders
 
-token = '1028529844:AAGa946n3V_L4RP4kYio2IvJlIbh_OWHxZQ'
+token = '1048025157:AAEZySNCLaqmOJsBN8ywAJZBzEJim2UjFo4'
 
 def create_menu(menu):
 
@@ -13,13 +13,25 @@ def create_menu(menu):
 
 	return markup
 
-def create_menu_leaders(menu):
+def create_main_menu(menu):
 
-# Функция создания меню лидеров фракций
+# Функция создания меню c возвратом в главное меню
 
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-	markup.row(menu[0], menu[1])
-	markup.row(menu[2], menu[3])
+
+	if len(menu) == 4:
+		cut = menu[:4]
+		markup.row(cut[0], cut[1])
+		markup.row(cut[2], cut[3])
+		del menu[:4]
+
+	elif len(menu) == 9:
+		cut = menu[:9]
+		markup.row(cut[0], cut[1], cut[2])
+		markup.row(cut[3], cut[4], cut[5])
+		markup.row(cut[6], cut[7], cut[8])
+		del menu[:9]
+
 	markup.row('Главное Меню')
 
 	return markup
@@ -53,13 +65,6 @@ def create_menu_detail(menu):
 		markup.row(cut[0], cut[1], cut[2])
 		markup.row(cut[3], cut[4], cut[5])
 		del menu[:6]
-
-	elif len(menu) == 9:
-		cut = menu[:9]
-		markup.row(cut[0], cut[1], cut[2])
-		markup.row(cut[3], cut[4], cut[5])
-		markup.row(cut[6], cut[7], cut[8])
-		del menu[:9]
 
 	elif len(menu) == 10:
 		cut = menu[:10]
