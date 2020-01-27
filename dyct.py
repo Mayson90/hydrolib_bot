@@ -12,7 +12,7 @@ d_hydro = {
 	'Синдикат': {
 		'Винсент': 'https://imgur.com/sgcUAQE',
 		'Заводила': 'https://imgur.com/zbMwsBi',
-		'Стефан': 'https://imgur.com/zNNx9cJ',
+		'Стефан': 'https://imgur.com/kdTGJxV',
 		'Тень': 'https://imgur.com/ZfJj8X4',
 		'Гидроид': 'https://imgur.com/ipgIIvC',
 		'Чарли': 'https://imgur.com/DkNkKuo',
@@ -22,19 +22,19 @@ d_hydro = {
 		'Повстанец': 'https://imgur.com/sKsD3G7'
 	},
 	'Нисимура': {
-		'Тэцуи': 'https://imgur.com/M1wMeVC',
-		'Техник': 'https://imgur.com/JjpG9Pl',
-		'Контроллер':'https://imgur.com/8PBpWYz',
-		'Бегемот I': 'https://imgur.com/39kwWh2',
-		'Сольпуга I': 'https://imgur.com/4ZOZON7',
-		'Шакал I': 'https://imgur.com/EU4tUMz',
-		'Бегемот II':'https://imgur.com/bn5shfp',
-		'Сольпуга II': 'https://imgur.com/DJscPjO',
-		'Шакал II': 'https://imgur.com/POslpaK',
-		'Жук I': 'https://imgur.com/gNkPbUl',
-		'Жук II': 'https://imgur.com/S4w56MQ',
-		'Стрекоза I': 'https://imgur.com/LPYHKs5',
-		'Стрекоза II': 'https://imgur.com/VdBUugl'
+		'Тэцуи': 'https://imgur.com/xAH3aCM',
+		'Техник': 'https://imgur.com/gLCOkz9',
+		'Контроллер':'https://imgur.com/YLqg7fw',
+		'Бегемот I': 'https://imgur.com/CmXxTWd',
+		'Сольпуга I': 'https://imgur.com/iRFK3wU',
+		'Шакал I': 'https://imgur.com/r2lSf90',
+		'Бегемот II':'https://imgur.com/tNuKAok',
+		'Сольпуга II': 'https://imgur.com/5tbzkIE',
+		'Шакал II': 'https://imgur.com/UHVQwXk',
+		'Жук I': 'https://imgur.com/hj6cnA7',
+		'Жук II': 'https://imgur.com/NJvAErJ',
+		'Стрекоза I': 'https://imgur.com/GfGkYD6',
+		'Стрекоза II': 'https://imgur.com/jl8ywgx'
 		}
 }
 
