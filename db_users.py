@@ -2,7 +2,7 @@ import pymongo
 from pymongo import MongoClient
 from datetime import datetime
 
-client = MongoClient('localhost', 27017)
+client = pymongo.MongoClient('mongodb+srv://root:x52BOmvikV6f6M9j@hydrolib-dpiwj.mongodb.net/test?retryWrites=true&w=majority')
 
 db = client['hydrolib_db']
 
