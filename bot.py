@@ -1,6 +1,6 @@
 import telebot
 import logging
-import config
+import config, db_users
 import random
 
 from telebot import types
@@ -36,24 +36,28 @@ text_messages = {
 
 @bot.message_handler(commands=['start'])
 def get_start(message):
+	db_users.check_user(message)
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	markup.row('Главное Меню')
 	bot.send_message(message.from_user.id, text_messages['start'].format(name=message.from_user.first_name), reply_markup=markup)
 
 @bot.message_handler(commands=['help'])
 def get_start(message):
+	db_users.check_user(message)
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	markup.row('Главное Меню')
 	bot.send_message(message.from_user.id, text_messages['help'], reply_markup=markup)
 
 @bot.message_handler(commands=['destroy'])
 def get_start(message):
+	db_users.check_user(message)
 	animation = 'https://media.giphy.com/media/26n6XC8EYdrzRniWQ/giphy.gif'
 	bot.send_message(message.from_user.id, text_messages['destroy'])
 	bot.send_animation(message.from_user.id, animation)
 
 @bot.message_handler(content_types=['text'])
 def get_nav(message):
+	db_users.check_user(message)
 
 # Функция навигации по фракциям и персонажам
 
