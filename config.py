@@ -60,11 +60,12 @@ def create_menu_detail(menu):
 
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-	if len(menu) == 6:
-		cut = menu[:6]
+	if len(menu) == 9:
+		cut = menu[:9]
 		markup.row(cut[0], cut[1], cut[2])
 		markup.row(cut[3], cut[4], cut[5])
-		del menu[:6]
+		markup.row(cut[6], cut[7], cut[8])
+		del menu[:9]
 
 	elif len(menu) == 10:
 		cut = menu[:10]

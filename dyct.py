@@ -7,7 +7,10 @@ d_hydro = {
 		'Охотник': 'https://imgur.com/Ut9KoQu',
 		'Снайпер': 'https://imgur.com/ITGda9s',
 		'Инспектор': 'https://imgur.com/kARxrT6',
-		'Патрульный': 'https://imgur.com/66GDxBr'
+		'Патрульный': 'https://imgur.com/66GDxBr',
+		'Инженер': 'https://imgur.com/d9Jbpvn',
+		'Десантник': 'https://imgur.com/Cg3WDaI',
+		'Турель': 'https://imgur.com/jC1yWcG'
 	},
 	'Синдикат': {
 		'Винсент': 'https://imgur.com/sgcUAQE',
