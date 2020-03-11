@@ -1,30 +1,36 @@
 import pymongo
+import config
+
 from pymongo import MongoClient
 from datetime import datetime
 
-client = pymongo.MongoClient('mongodb+srv://root:x52BOmvikV6f6M9j@hydrolib-dpiwj.mongodb.net/test?retryWrites=true&w=majority')
 
-db = client['hydrolib_db']
+client = pymongo.MongoClient(config.db)
+db = client[config.client]
 
-def check_user(message):
+def create_user(message):
 
-	# Функция проверяет существующего пользователя
-	# Если его нет - создает нового
-	# Если пользователь существует - обновляет поле даты
+    """Функция проверяет существующего пользователя
+    
+    Если его нет - создает нового
+    
+    Если пользователь существует - обновляет поле даты
 
-	set_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    """
 
-	if db.users.find_one({'user_id': message.from_user.id}) == None:
-		new_user = {
-			'first_name': message.from_user.first_name,
-			'last_name': message.from_user.last_name,
-			'user_name': message.from_user.username,
-			'user_id': message.from_user.id,
-			'date': set_date,
-		}
-		db.users.insert_one(new_user)
+    set_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-	elif db.users.find_one({'user_id': message.from_user.id}) is not None:
-		db.users.update_one({'user_id': message.from_user.id}, {'$set': {'date': set_date}})
+    if db.users.find_one({'user_id': message.from_user.id}) is None:
+        new_user = {
+            'first_name': message.from_user.first_name,
+            'last_name': message.from_user.last_name,
+            'user_name': message.from_user.username,
+            'user_id': message.from_user.id,
+            'date': set_date,
+        }
+        db.users.insert_one(new_user)
 
-	return
+    else:
+        db.users.update_one({'user_id': message.from_user.id}, {'$set': {'date': set_date}})
+
+    return
