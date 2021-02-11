@@ -74,14 +74,15 @@ def create_menu_detail(menu):
         markup.row(cut[8], cut[9])
         del menu[:10]
 
-    elif len(menu) == 13:
-        cut = menu[:13]
+    elif len(menu) == 14:
+        cut = menu[:14]
         markup.row(cut[0], cut[1], cut[2])
         markup.row(cut[3], cut[4], cut[5])
         markup.row(cut[6], cut[7], cut[8])
         markup.row(cut[9], cut[10])
         markup.row(cut[11], cut[12])
-        del menu[:13]		
+        markup.row(cut[13])
+        del menu[:14]		
 
     markup.row('назад - Фракции')
 
