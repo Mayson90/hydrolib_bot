@@ -37,7 +37,7 @@ d_hydro = {
         'Жук II': 'https://imgur.com/NJvAErJ',
         'Стрекоза I': 'https://imgur.com/GfGkYD6',
         'Стрекоза II': 'https://imgur.com/jl8ywgx',
-        'Безликий':'https://imgur.com/R83eh2v'
+        'Безликий':'https://imgur.com/NQotA81'
     }
 }
 
