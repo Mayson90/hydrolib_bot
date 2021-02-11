@@ -18,9 +18,8 @@ text_messages = {
         u'|УСИЛИТЕЛИ| - получить карты усилителей\n'
         u'|ТАКТИКИ| - получить карты тактик\n'
         u'|ПРАВИЛА| - скачать актуальные правила\n'
-        u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстановки\n'
-        u''
-        u'кнопка *Главное Меню* снизу',
+        u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстановки\n\n'
+        u'кнопка |Главное Меню| снизу',
     
     'help':
         u'С предложениям по улучшению, а также об ошибках\n'
@@ -59,31 +58,31 @@ def get_nav(message):
 
 # Функция навигации по фракциям и персонажам
 
-    if message.text == 'ГЛАВНОЕ МЕНЮ':
+    if message.text == 'Главное Меню':
         get_menu(message)
 
-    if message.text == 'ФРАКЦИИ':
+    if message.text == 'Фракции':
         get_fractions(message)
 		
-    elif message.text == 'УСИЛИТЕЛИ':
+    elif message.text == 'Усилители':
         get_drugs(message)
 
-    elif message.text == 'ТАКТИКИ':
+    elif message.text == 'Тактики':
         get_tactics(message)
 
-    elif message.text == 'ПРАВИЛА':
+    elif message.text == 'Правила':
         get_rules(message)
 
-    elif message.text == 'ГИДРОПЕДИЯ':
+    elif message.text == 'Гидропедия':
         get_pedia(message)    
 
-    elif message.text == 'РАНДОМАЙЗЕР':
+    elif message.text == 'Рандомайзер':
         get_random(message)	
 
-    elif message.text == 'назад - ЛИДЕРЫ':
+    elif message.text == 'назад - Лидеры':
         get_tactics(message)	
 
-    elif message.text == 'назад - ФРАКЦИИ':
+    elif message.text == 'назад - Фракции':
         get_fractions(message)		
 
     elif message.text in list(d_drugs):
@@ -94,19 +93,19 @@ def get_nav(message):
     # Получить список лидеров фракций
         get_all_leaders(message)
 
-    elif message.text in list(d_leaders['ПРАВИТЕЛЬСТВО - ДЭВИС']):
+    elif message.text in list(d_leaders['Правительство - Дэвис']):
     # Получить карточки Дэвиса
         get_devis(message)		
 
-    elif message.text in list(d_leaders['СИНДИКАТ - ВИНСЕНТ']):
+    elif message.text in list(d_leaders['Синдикат - Винсент']):
     # Получить карточки Винсента
         get_vinsent(message)	
 
-    elif message.text in list(d_leaders['СИНДИКАТ - ЗАВОДИЛА']):
+    elif message.text in list(d_leaders['Синдикат - Заводила']):
     # Получить карточки Заводилы
         get_firebrand(message)
 
-    elif message.text in list(d_leaders['НИСИМУРА - ТЭЦУИ']):
+    elif message.text in list(d_leaders['Нисимура - Тэцуи']):
     # Получить карточки Тэцуи
         get_tetsui(message)	
 
@@ -114,15 +113,15 @@ def get_nav(message):
     # Получить юнитов фракции
         get_all_units(message)			
 
-    elif message.text in list(d_hydro['ПРАВИТЕЛЬСТВО']):
+    elif message.text in list(d_hydro['Правительство']):
     # Получить карточки юнитов Правительства
         get_gov(message)
 	
-    elif message.text in list(d_hydro['СИНДИКАТ']):
+    elif message.text in list(d_hydro['Синдикат']):
     # Получить карточки юнитов Синдиката
         get_syn(message)
 
-    elif message.text in list(d_hydro['НИСИМУРА']):
+    elif message.text in list(d_hydro['Нисимура']):
     # Получить карточки юнитов Нисимуры
         get_nis(message)
 
@@ -132,8 +131,8 @@ def get_menu(message):
 # Функция главного меню
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('ФРАКЦИИ', 'УСИЛИТЕЛИ', 'ТАКТИКИ')
-    markup.row('ПРАВИЛА', 'ГИДРОПЕДИЯ', 'РАНДОМАЙЗЕР')
+    markup.row('Фракции', 'Усилители', 'Тактики')
+    markup.row('Правила', 'Гидропедия', 'Рандомайзер')
     bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
 
 def get_rules(message):
@@ -187,28 +186,28 @@ def get_devis(message):
 # Функция возвращает карты Дэвиса
 
     devis = items(bot, message)
-    devis.get_leaders_card('ПРАВИТЕЛЬСТВО - ДЭВИС')
+    devis.get_leaders_card('Правительсвто - Дэвис')
 
 def get_vinsent(message):
 
 # Функция возвращает карты Винсента
 
     vinsent = items(bot, message)
-    vinsent.get_leaders_card('СИНДИКАТ - ВИНСЕНТ')
+    vinsent.get_leaders_card('Синдикат - Винсент')
 
 def get_firebrand(message):
 
 # Функция возвращает карты Заводилы
 
     firebrand = items(bot, message)
-    firebrand.get_leaders_card('СИНДИКАТ - ЗАВОДИЛА')
+    firebrand.get_leaders_card('Синдикат - Заводила')
 
 def get_tetsui(message):
 
 # Функция возвращает карты Тэцуи
 
     tetsui = items(bot, message)
-    tetsui.get_leaders_card('НИСИМУРА - ТЭЦУИ')			
+    tetsui.get_leaders_card('Нисимура - Тэцуи')			
 
 def get_fractions(message):
 
@@ -239,20 +238,20 @@ def get_syn(message):
 # Функция возвращает карты юнитов Синдиката
 
     syn = items(bot, message)
-    syn.get_unit_card('СИНДИКАТ')
+    syn.get_unit_card('Синдикат')
 
 def get_nis(message):
 
 # Функция возвращает карты юнитов Нисимуры
 
     nis = items(bot, message)
-    nis.get_unit_card('НИСИМУРА')
+    nis.get_unit_card('Нисимура')
 
 def get_gov(message):
 
 # Функция возвращает карты юнитов Правительства
 	
     gov = items(bot, message)
-    gov.get_unit_card('ПРАВИТЕЛЬСТВО')
+    gov.get_unit_card('Правительство')
 
 bot.polling(none_stop=True)

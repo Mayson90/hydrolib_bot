@@ -8,7 +8,7 @@ def create_menu(menu):
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.row(menu[0], menu[1], menu[2])
-    markup.row('ГЛАВНОЕ МЕНЮ')
+    markup.row('Главное Меню')
 
     return markup
 
@@ -31,7 +31,7 @@ def create_main_menu(menu):
         markup.row(cut[6], cut[7], cut[8])
         del menu[:9]
 
-    markup.row('ГЛАВНОЕ МЕНЮ')
+    markup.row('Главное Меню')
 
     return markup
 
@@ -49,7 +49,7 @@ def create_menu_tactics(menu):
     else:
         print('Error while creating menu of tactics')
 
-    markup.row('назад - ЛИДЕРЫ')
+    markup.row('назад - Лидеры')
 
     return markup
 
@@ -83,7 +83,7 @@ def create_menu_detail(menu):
         markup.row(cut[11], cut[12])
         del menu[:13]		
 
-    markup.row('назад - ФРАКЦИИ')
+    markup.row('назад - Фракции')
 
     return markup
 
