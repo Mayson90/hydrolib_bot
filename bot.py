@@ -35,14 +35,14 @@ text_messages = {
 def get_start(message):
     db_users.create_user(message)
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('ГЛАВНОЕ МЕНЮ')
+    markup.row('Главное Меню')
     bot.send_message(message.from_user.id, text_messages['start'].format(name=message.from_user.first_name), reply_markup=markup)
 
 @bot.message_handler(commands=['help'])
 def get_start(message):
     db_users.create_user(message)
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('ГЛАВНОЕ МЕНЮ')
+    markup.row('Главное Меню')
     bot.send_message(message.from_user.id, text_messages['help'], reply_markup=markup)
 
 @bot.message_handler(commands=['destroy'])
