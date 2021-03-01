@@ -186,7 +186,7 @@ def get_devis(message):
 # Функция возвращает карты Дэвиса
 
     devis = items(bot, message)
-    devis.get_leaders_card('Правительсвто - Дэвис')
+    devis.get_leaders_card('Правительство - Дэвис')
 
 def get_vinsent(message):
 
