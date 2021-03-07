@@ -15,7 +15,7 @@ d_hydro = {
         'Винсент': 'https://imgur.com/sgcUAQE',
         'Заводила': 'https://imgur.com/zbMwsBi',
         'Стефан': 'https://imgur.com/mW3tIRw',
-        'Тень': 'https://imgur.com/ZfJj8X4',
+        'Тень': 'https://imgur.com/2oIX5x6',
         'Гидроид': 'https://imgur.com/ipgIIvC',
         'Чарли': 'https://imgur.com/DkNkKuo',
         'Хакер': 'https://imgur.com/SIjjjXm',
@@ -28,7 +28,7 @@ d_hydro = {
         'Техник': 'https://imgur.com/gLCOkz9',
         'Контроллер':'https://imgur.com/YLqg7fw',
         'Бегемот I': 'https://imgur.com/CmXxTWd',
-        'Сольпуга I': 'https://imgur.com/iRFK3wU',
+        'Сольпуга I': 'https://imgur.com/ZZhAfQw',
         'Шакал I': 'https://imgur.com/r2lSf90',
         'Бегемот II':'https://imgur.com/tNuKAok',
         'Сольпуга II': 'https://imgur.com/5tbzkIE',
@@ -37,7 +37,7 @@ d_hydro = {
         'Жук II': 'https://imgur.com/NJvAErJ',
         'Стрекоза I': 'https://imgur.com/GfGkYD6',
         'Стрекоза II': 'https://imgur.com/jl8ywgx',
-        'Безликий':'https://imgur.com/NQotA81'
+        'Безликий':'https://imgur.com/zh2uW1N'
     }
 }
 
