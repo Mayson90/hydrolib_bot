@@ -2,3 +2,5 @@ __pycache__
 .handler-saves
 .vscode
 venv
+.DS_Store
+.idea/
