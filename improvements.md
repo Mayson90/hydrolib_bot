@@ -16,3 +16,9 @@
 ## Architecture
 
 - [ ] telegram -> com/val to local objects -> bot logic -> bot answer to telegram API -> answer to telegram
+
+## CI/CD
+
+- [x] develop branch
+- [x] github secrets
+- [ ] github workflow
