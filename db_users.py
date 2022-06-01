@@ -1,14 +1,14 @@
-import pymongo
-import config
+from conf import db, connection
 
 from pymongo import MongoClient
 from datetime import datetime
 
 
-client = pymongo.MongoClient(config.db)
-db = client[config.client]
+client = MongoClient(connection)
+db = client[db]
 
-def create_user(message):
+
+async def create_user(message):
 
     """Функция проверяет существующего пользователя
     
@@ -28,7 +28,7 @@ def create_user(message):
             'user_id': message.from_user.id,
             'date': set_date,
         }
-        db.users.insert_one(new_user)
+        await db.users.insert_one(new_user)
 
     else:
         db.users.update_one({'user_id': message.from_user.id}, {'$set': {'date': set_date}})
