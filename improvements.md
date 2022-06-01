@@ -20,5 +20,5 @@
 ## CI/CD
 
 - [x] develop branch
-- [x] github secrets
+- [ ] github secrets to work with heroku
 - [ ] github workflow
