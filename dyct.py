@@ -1,3 +1,18 @@
+# словарь комманд
+d_commands = {
+    'Главное Меню': 'get_menu(message)',
+    'Фракции': 'get_fractions(message)',
+    'Усилители': 'get_drugs(message)',
+    'Тактики': 'get_tactics(message)',
+    'Скачать': 'get_downloads(message)',
+    'Рандомайзер': 'get_random(message)',
+    'Правила': 'get_rules(message)',
+    'Гидропедия': 'get_pedia(message)',
+    'FAQ': 'get_faq(message)',
+    'назад - Лидеры': 'get_tactics(message)',
+    'назад - Фракции': 'get_fractions(message)',
+}
+
 # словарь фракций
 d_hydro = {
     'Правительство': {
@@ -26,18 +41,18 @@ d_hydro = {
     'Нисимура': {
         'Тэцуи': 'https://imgur.com/xAH3aCM',
         'Техник': 'https://imgur.com/gLCOkz9',
-        'Контроллер':'https://imgur.com/YLqg7fw',
+        'Контроллер': 'https://imgur.com/YLqg7fw',
         'Бегемот I': 'https://imgur.com/CmXxTWd',
         'Сольпуга I': 'https://imgur.com/ZZhAfQw',
         'Шакал I': 'https://imgur.com/r2lSf90',
-        'Бегемот II':'https://imgur.com/tNuKAok',
+        'Бегемот II': 'https://imgur.com/tNuKAok',
         'Сольпуга II': 'https://imgur.com/5tbzkIE',
         'Шакал II': 'https://imgur.com/UHVQwXk',
         'Жук I': 'https://imgur.com/hj6cnA7',
         'Жук II': 'https://imgur.com/NJvAErJ',
         'Стрекоза I': 'https://imgur.com/GfGkYD6',
         'Стрекоза II': 'https://imgur.com/jl8ywgx',
-        'Безликий':'https://imgur.com/zh2uW1N'
+        'Безликий': 'https://imgur.com/zh2uW1N'
     }
 }
 
@@ -55,8 +70,7 @@ d_set = {
     'url_set_kl': 'https://imgur.com/gNxKqKW',
     'url_set_fl': 'https://imgur.com/Y6chgCJ',
     'url_set_fl_r': 'https://imgur.com/BmyrPsr',
-    'url_set_fl_l': 'https://imgur.com/TvFh6Oj',
-    'url_set_kl': 'https://imgur.com/gNxKqKW'
+    'url_set_fl_l': 'https://imgur.com/TvFh6Oj'
 }
 
 # словарь лидеров
@@ -78,20 +92,20 @@ d_leaders = {
         'Sentiment': 'https://imgur.com/Q0hqSSJ'
     },
     'Синдикат - Заводила': {
-	    'Митинг': 'https://imgur.com/xal8gdu',
-	    'Толкач': 'https://imgur.com/ynIwq1d',
-	    'Хард Рок': 'https://imgur.com/ypMbT0D',
-	    'Мой Район': 'https://imgur.com/3Gdcz7j',
-	    'Рэйв': 'https://imgur.com/z9162Eh',
-	    'Заговорщик': 'https://imgur.com/KDwtqp2'
+        'Митинг': 'https://imgur.com/xal8gdu',
+        'Толкач': 'https://imgur.com/ynIwq1d',
+        'Хард Рок': 'https://imgur.com/ypMbT0D',
+        'Мой Район': 'https://imgur.com/3Gdcz7j',
+        'Рэйв': 'https://imgur.com/z9162Eh',
+        'Заговорщик': 'https://imgur.com/KDwtqp2'
     },
     'Нисимура - Тэцуи': {
-	    'Кумир': 'https://imgur.com/u1oSsWO',
-	    'Устранитель': 'https://imgur.com/EopIMWN',
-	    'Каток': 'https://imgur.com/M40L1NQ',
-	    'Зщита Данных': 'https://imgur.com/2snlIgT',
-	    'Мизантроп': 'https://imgur.com/S9kMac0',
-	    'Мать Роя': 'https://imgur.com/2lTN2BL'
+        'Кумир': 'https://imgur.com/u1oSsWO',
+        'Устранитель': 'https://imgur.com/EopIMWN',
+        'Каток': 'https://imgur.com/M40L1NQ',
+        'Зщита Данных': 'https://imgur.com/2snlIgT',
+        'Мизантроп': 'https://imgur.com/S9kMac0',
+        'Мать Роя': 'https://imgur.com/2lTN2BL'
     }
 }
 
@@ -107,3 +121,9 @@ d_drugs = {
     'Психоз': 'https://imgur.com/VDmdMrY',
     'Зип': 'https://imgur.com/Tu7rCX2'
 }
+
+# сообщения
+d_msg = '011011100110111101110111001000000110100100100000011000010110110100100000011000100110010101100011011011110110' \
+        '110101100101001000000110010001100101011000010111010001101000001000000111010001101000011001010010000001100100' \
+        '011001010111001101110100011100100110111101111001011001010111001000100000011011110110011000100000011101110110' \
+        '111101110010011011000110010001110011'

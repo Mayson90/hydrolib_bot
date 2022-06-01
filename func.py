@@ -118,7 +118,7 @@ class GetCards:
         self.bot.send_photo(user_id, url)
 
     def get_leaders(self):
-        # Функция создания меню тактический карт из вызова по ключу лидера
+        # Функция создания меню тактических карт из вызова по ключу лидера
 
         user_id = self.message.from_user.id
         menu = list(d_leaders[self.message.text])
