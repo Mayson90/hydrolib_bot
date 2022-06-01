@@ -15,10 +15,11 @@
 
 ## Architecture
 
+- [x] async using
 - [ ] telegram -> com/val to local objects -> bot logic -> bot answer to telegram API -> answer to telegram
 
 ## CI/CD
 
 - [x] develop branch
-- [ ] github secrets to work with heroku
+- [x] heroku config vars
 - [ ] github workflow

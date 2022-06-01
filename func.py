@@ -95,39 +95,39 @@ class GetCards:
         self.bot = bot
         self.message = message
 
-    def get_units(self):
+    async def get_units(self):
         # Функция создания меню персонажей из вызова по ключу фракции
 
         user_id = self.message.from_user.id
         menu = list(d_hydro[self.message.text])
         markup = create_menu_detail(menu)
-        self.bot.send_message(user_id, 'Выбери персонажа:', reply_markup=markup)
+        await self.bot.send_message(user_id, 'Выбери персонажа:', reply_markup=markup)
 
-    def get_unit_card(self, frac):
+    async def get_unit_card(self, frac):
         # Функция получения карточки персонажа из вызова по ключу фракции и персонажа
 
         user_id = self.message.from_user.id
         url = str(d_hydro[frac][self.message.text])
-        self.bot.send_photo(user_id, url)
+        await self.bot.send_photo(user_id, url)
 
-    def get_drug_card(self):
+    async def get_drug_card(self):
         # Функция получения карт усилителей по ключу
 
         user_id = self.message.from_user.id
         url = str(d_drugs[self.message.text])
-        self.bot.send_photo(user_id, url)
+        await self.bot.send_photo(user_id, url)
 
-    def get_leaders(self):
+    async def get_leaders(self):
         # Функция создания меню тактических карт из вызова по ключу лидера
 
         user_id = self.message.from_user.id
         menu = list(d_leaders[self.message.text])
         markup = create_menu_tactics(menu)
-        self.bot.send_message(user_id, 'Выбери карточку:', reply_markup=markup)
+        await self.bot.send_message(user_id, 'Выбери карточку:', reply_markup=markup)
 
-    def get_leaders_card(self, card):
+    async def get_leaders_card(self, card):
         # Функция получения карточки лидера из вызова по ключу лидера и его карточки
 
         user_id = self.message.from_user.id
         url = str(d_leaders[card][self.message.text])
-        self.bot.send_photo(user_id, url)
+        await self.bot.send_photo(user_id, url)
