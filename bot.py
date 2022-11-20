@@ -248,4 +248,4 @@ async def get_gov(message):
     await gov.get_unit_card('Правительство')
 
 
-asyncio.run(bot.polling(none_stop=True))
+asyncio.run(bot.polling(non_stop=True))
