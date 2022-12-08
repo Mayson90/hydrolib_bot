@@ -1,11 +1,10 @@
 # словарь комманд
 d_commands = {
-    'Главное Меню': 'get_menu(message)',
     'Фракции': 'get_fractions(message)',
     'Усилители': 'get_drugs(message)',
-    'Тактики': 'get_tactics(message)',
     'Скачать': 'get_downloads(message)',
     'Рандомайзер': 'get_random(message)',
+    'Главное Меню': 'get_menu(message)',
 }
 
 # словарь загрузок
@@ -57,6 +56,38 @@ d_hydro = {
         'Стрекоза II': 'https://imgur.com/jl8ywgx',
         'Безликий': 'https://imgur.com/zh2uW1N',
     },
+    'Т[Дэвис]': {
+        'Усмирение': 'https://imgur.com/BF5y7WL',
+        'Старый Солдат': 'https://imgur.com/mcN9MvI',
+        'Железный Кеп': 'https://imgur.com/hI07iXJ',
+        'Рейд': 'https://imgur.com/hJrhd45',
+        'Досмотр': 'https://imgur.com/jctIul8',
+        'На Страже Закона': 'https://imgur.com/UTjlV0U',
+    },
+    'Т[Винсент]': {
+        'Скрытая Угроза': 'https://imgur.com/RHWoEG0',
+        'Проводник': 'https://imgur.com/Kk8N2Ui',
+        'Поиски Правды': 'https://imgur.com/lFkh5je',
+        'Раненый Зверь': 'https://imgur.com/hQnwgLT',
+        'Еще Один "Джимии"': 'https://imgur.com/naQEOvv',
+        'Sentiment': 'https://imgur.com/Q0hqSSJ',
+    },
+    'Т[Заводила]': {
+        'Митинг': 'https://imgur.com/xal8gdu',
+        'Толкач': 'https://imgur.com/ynIwq1d',
+        'Хард Рок': 'https://imgur.com/ypMbT0D',
+        'Мой Район': 'https://imgur.com/3Gdcz7j',
+        'Рэйв': 'https://imgur.com/z9162Eh',
+        'Заговорщик': 'https://imgur.com/KDwtqp2',
+    },
+    'Т[Тэцуи]': {
+        'Кумир': 'https://imgur.com/u1oSsWO',
+        'Устранитель': 'https://imgur.com/EopIMWN',
+        'Каток': 'https://imgur.com/M40L1NQ',
+        'Зщита Данных': 'https://imgur.com/2snlIgT',
+        'Мизантроп': 'https://imgur.com/S9kMac0',
+        'Мать Роя': 'https://imgur.com/2lTN2BL',
+    },
 }
 
 # словарь миссий
@@ -77,40 +108,40 @@ d_set = {
 }
 
 # словарь лидеров
-d_leaders = {
-    'Правительство - Дэвис': {
-        'Усмирение': 'https://imgur.com/BF5y7WL',
-        'Старый Солдат': 'https://imgur.com/mcN9MvI',
-        'Железный Кеп': 'https://imgur.com/hI07iXJ',
-        'Рейд': 'https://imgur.com/hJrhd45',
-        'Досмотр': 'https://imgur.com/jctIul8',
-        'На Страже Закона': 'https://imgur.com/UTjlV0U',
-    },
-    'Синдикат - Винсент': {
-        'Скрытая Угроза': 'https://imgur.com/RHWoEG0',
-        'Проводник': 'https://imgur.com/Kk8N2Ui',
-        'Поиски Правды': 'https://imgur.com/lFkh5je',
-        'Раненый Зверь': 'https://imgur.com/hQnwgLT',
-        'Еще Один "Джимии"': 'https://imgur.com/naQEOvv',
-        'Sentiment': 'https://imgur.com/Q0hqSSJ',
-    },
-    'Синдикат - Заводила': {
-        'Митинг': 'https://imgur.com/xal8gdu',
-        'Толкач': 'https://imgur.com/ynIwq1d',
-        'Хард Рок': 'https://imgur.com/ypMbT0D',
-        'Мой Район': 'https://imgur.com/3Gdcz7j',
-        'Рэйв': 'https://imgur.com/z9162Eh',
-        'Заговорщик': 'https://imgur.com/KDwtqp2',
-    },
-    'Нисимура - Тэцуи': {
-        'Кумир': 'https://imgur.com/u1oSsWO',
-        'Устранитель': 'https://imgur.com/EopIMWN',
-        'Каток': 'https://imgur.com/M40L1NQ',
-        'Зщита Данных': 'https://imgur.com/2snlIgT',
-        'Мизантроп': 'https://imgur.com/S9kMac0',
-        'Мать Роя': 'https://imgur.com/2lTN2BL',
-    },
-}
+# d_leaders = {
+#     'Правительство - Дэвис': {
+#         'Усмирение': 'https://imgur.com/BF5y7WL',
+#         'Старый Солдат': 'https://imgur.com/mcN9MvI',
+#         'Железный Кеп': 'https://imgur.com/hI07iXJ',
+#         'Рейд': 'https://imgur.com/hJrhd45',
+#         'Досмотр': 'https://imgur.com/jctIul8',
+#         'На Страже Закона': 'https://imgur.com/UTjlV0U',
+#     },
+#     'Синдикат - Винсент': {
+#         'Скрытая Угроза': 'https://imgur.com/RHWoEG0',
+#         'Проводник': 'https://imgur.com/Kk8N2Ui',
+#         'Поиски Правды': 'https://imgur.com/lFkh5je',
+#         'Раненый Зверь': 'https://imgur.com/hQnwgLT',
+#         'Еще Один "Джимии"': 'https://imgur.com/naQEOvv',
+#         'Sentiment': 'https://imgur.com/Q0hqSSJ',
+#     },
+#     'Синдикат - Заводила': {
+#         'Митинг': 'https://imgur.com/xal8gdu',
+#         'Толкач': 'https://imgur.com/ynIwq1d',
+#         'Хард Рок': 'https://imgur.com/ypMbT0D',
+#         'Мой Район': 'https://imgur.com/3Gdcz7j',
+#         'Рэйв': 'https://imgur.com/z9162Eh',
+#         'Заговорщик': 'https://imgur.com/KDwtqp2',
+#     },
+#     'Нисимура - Тэцуи': {
+#         'Кумир': 'https://imgur.com/u1oSsWO',
+#         'Устранитель': 'https://imgur.com/EopIMWN',
+#         'Каток': 'https://imgur.com/M40L1NQ',
+#         'Зщита Данных': 'https://imgur.com/2snlIgT',
+#         'Мизантроп': 'https://imgur.com/S9kMac0',
+#         'Мать Роя': 'https://imgur.com/2lTN2BL',
+#     },
+# }
 
 # словарь усилителей
 d_drugs = {
