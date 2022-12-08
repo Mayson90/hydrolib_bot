@@ -6,8 +6,6 @@ d_commands = {
     'Тактики': 'get_tactics(message)',
     'Скачать': 'get_downloads(message)',
     'Рандомайзер': 'get_random(message)',
-    'назад - Лидеры': 'get_tactics(message)',
-    'назад - Фракции': 'get_fractions(message)',
 }
 
 # словарь загрузок

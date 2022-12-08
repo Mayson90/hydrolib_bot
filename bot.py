@@ -8,7 +8,7 @@ from telebot import types
 from conf import token
 import db_users
 from dyct import *
-from func import create_menu, create_main_menu, GetObjects
+from func import create_menu, GetObjects
 
 
 bot = AsyncTeleBot(token)
@@ -119,9 +119,8 @@ async def get_menu(message):
 async def get_downloads(message):
     # Функция меню загрузок
 
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('Правила', 'Гидропедия', 'FAQ', 'Террейн')
-    markup.row('Главное Меню')
+    menu = list(d_downloads.keys())
+    markup = create_menu(menu)
     await bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
 
 
@@ -136,7 +135,7 @@ async def get_drugs(message):
     # Функция навигации по усилителям
 
     menu = list(d_drugs.keys())
-    markup = create_main_menu(menu)
+    markup = create_menu(menu)
     await bot.send_message(message.from_user.id, 'Выбери усилитель:', reply_markup=markup)
 
 
@@ -151,7 +150,7 @@ async def get_tactics(message):
     # Функция навигации по тактикам лидеров фракций
 
     menu = list(d_leaders.keys())
-    markup = create_main_menu(menu)
+    markup = create_menu(menu)
     await bot.send_message(message.from_user.id, 'Выбери лидера:', reply_markup=markup)
 
 
