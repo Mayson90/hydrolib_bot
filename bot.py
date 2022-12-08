@@ -18,7 +18,7 @@ text_messages = {
         u'Приветствую тебя, {name}!\n\n'
         u'Навигация по ГЛАВНОМУ МЕНЮ:\n\n'
         u'|ФРАКЦИИ| - навигация по персонажам фракций\n'
-        u'|T[лидер]| - получить карты тактик\n'
+        u'|[T]Лидер| - получить карты тактик\n'
         u'|УСИЛИТЕЛИ| - получить карты усилителей\n'
         u'|СКАЧАТЬ| - скачать актуальные правила, FAQ и т.д.\n'
         u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстановки\n\n'
@@ -78,24 +78,10 @@ async def get_nav(message):
     if message.text in list(d_drugs):
         # Получить список усилителей
         await get_drugs_all(message)
-    # if message.text in list(d_leaders):
-    #     # Получить список лидеров фракций
-    #     await get_all_leaders(message)
     if message.text in list(d_hydro):
         # Получить персонажей фракции
         await get_all_units(message)
-    # if message.text in list(d_leaders['Правительство - Дэвис']):
-    #     # Получить карточки Дэвиса
-    #     await get_devis(message)
-    # if message.text in list(d_leaders['Синдикат - Винсент']):
-    #     # Получить карточки Винсента
-    #     await get_vinsent(message)
-    # if message.text in list(d_leaders['Синдикат - Заводила']):
-    #     # Получить карточки Заводилы
-    #     await get_firebrand(message)
-    # if message.text in list(d_leaders['Нисимура - Тэцуи']):
-    #     # Получить карточки Тэцуи
-    #     await get_tetsui(message)
+
     if message.text in list(d_hydro['Правительство']):
         # Получить карточки персонажей Правительства
         await get_gov(message)
@@ -105,16 +91,16 @@ async def get_nav(message):
     if message.text in list(d_hydro['Нисимура']):
         # Получить карточки персонажей Нисимуры
         await get_nis(message)
-    if message.text in list(d_hydro['Т[Дэвис]']):
+    if message.text in list(d_hydro['[Т]Дэвис']):
         # Получить карточки Дэвиса
         await get_devis(message)
-    if message.text in list(d_hydro['Т[Винсент]']):
+    if message.text in list(d_hydro['[Т]Винсент']):
         # Получить карточки Винсента
         await get_vinsent(message)
-    if message.text in list(d_hydro['Т[Заводила]']):
+    if message.text in list(d_hydro['[Т]Заводила']):
         # Получить карточки Заводилы
         await get_firebrand(message)
-    if message.text in list(d_hydro['Т[Тэцуи]']):
+    if message.text in list(d_hydro['[Т]Тэцуи']):
         # Получить карточки Тэцуи
         await get_tetsui(message)
 
@@ -205,28 +191,28 @@ async def get_devis(message):
     # Функция возвращает карты Дэвиса
 
     devis = GetObjects(bot, message)
-    await devis.get_object_data('Т[Дэвис]')
+    await devis.get_object_data('[Т]Дэвис')
 
 
 async def get_vinsent(message):
     # Функция возвращает карты Винсента
 
     vinsent = GetObjects(bot, message)
-    await vinsent.get_object_data('Т[Винсент]')
+    await vinsent.get_object_data('[Т]Винсент')
 
 
 async def get_firebrand(message):
     # Функция возвращает карты Заводилы
 
     firebrand = GetObjects(bot, message)
-    await firebrand.get_object_data('T[Заводила]')
+    await firebrand.get_object_data('[T]Заводила')
 
 
 async def get_tetsui(message):
     # Функция возвращает карты Тэцуи
 
     tetsui = GetObjects(bot, message)
-    await tetsui.get_object_data('Т[Тэцуи]')
+    await tetsui.get_object_data('[Т]Тэцуи')
 
 
 # воркер бота

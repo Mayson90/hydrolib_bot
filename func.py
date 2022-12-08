@@ -31,11 +31,11 @@ class GetObjects:
         markup = create_menu(menu)
         await self.bot.send_message(user_id, 'Выбери объект:', reply_markup=markup)
 
-    async def get_object_data(self, frac):
+    async def get_object_data(self, value):
         # Функция получения карточки персонажа из вызова по ключу фракции и персонажа
 
         user_id = self.message.from_user.id
-        url = str(d_hydro[frac][self.message.text])
+        url = str(d_hydro[value][self.message.text])
         await self.bot.send_photo(user_id, url)
 
     async def get_drug_card(self):
