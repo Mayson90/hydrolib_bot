@@ -9,6 +9,7 @@ d_commands = {
     'Правила': 'get_rules(message)',
     'Гидропедия': 'get_pedia(message)',
     'FAQ': 'get_faq(message)',
+    'Террейн': 'get_terrain(message)',
     'назад - Лидеры': 'get_tactics(message)',
     'назад - Фракции': 'get_fractions(message)',
 }

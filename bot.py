@@ -117,7 +117,7 @@ async def get_downloads(message):
     # Функция меню загрузок
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('Правила', 'Гидропедия', 'FAQ')
+    markup.row('Правила', 'Гидропедия', 'FAQ', 'Террейн')
     markup.row('Главное Меню')
     await bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
 
@@ -142,6 +142,14 @@ async def get_faq(message):
     # Функции загрузки гидропедии
 
     url = 'https://drive.google.com/uc?export=download&id=1XAxfrmShesX-pzJdVsKdVCPEFCvNwbnK'
+    await bot.send_message(message.from_user.id, 'документ загружается...')
+    await bot.send_document(message.from_user.id, url)
+
+
+async def get_terrain(message):
+    # Функции загрузки гидропедии
+
+    url = 'https://drive.google.com/uc?export=download&id=1kIIVZD1hSC2Zng7Tdwk5f0vi2kQYpWI6'
     await bot.send_message(message.from_user.id, 'документ загружается...')
     await bot.send_document(message.from_user.id, url)
 
