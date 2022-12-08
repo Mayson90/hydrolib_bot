@@ -1,6 +1,6 @@
 from telebot import types
 
-from dyct import d_hydro, d_drugs, d_leaders
+from dyct import d_hydro, d_drugs, d_leaders, d_downloads
 
 
 def create_menu(menu):
@@ -89,7 +89,7 @@ def create_menu_detail(menu):
     return markup
 
 
-class GetCards:
+class GetObjects:
 
     def __init__(self, bot, message):
         self.bot = bot
@@ -116,6 +116,14 @@ class GetCards:
         user_id = self.message.from_user.id
         url = str(d_drugs[self.message.text])
         await self.bot.send_photo(user_id, url)
+
+    async def get_file_url(self):
+        # Функция загрузки файла по ключу
+
+        user_id = self.message.from_user.id
+        url = str(d_downloads[self.message.text])
+        await self.bot.send_message(user_id, 'документ загружается...')
+        await self.bot.send_document(user_id, url)
 
     async def get_leaders(self):
         # Функция создания меню тактических карт из вызова по ключу лидера

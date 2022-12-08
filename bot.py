@@ -7,8 +7,8 @@ from telebot import types
 
 from conf import token
 import db_users
-from dyct import d_commands, d_hydro, d_mis, d_set, d_drugs, d_leaders, d_msg
-from func import create_menu, create_main_menu, GetCards
+from dyct import *
+from func import create_menu, create_main_menu, GetObjects
 
 
 bot = AsyncTeleBot(token)
@@ -72,6 +72,9 @@ async def get_nav(message):
             if message.text == key:
                 await eval(value)
 
+    if message.text in list(d_downloads):
+        # Получить список доков
+        await get_downloads_all(message)
     if message.text in list(d_drugs):
         # Получить список усилителей
         await get_drugs_all(message)
@@ -122,36 +125,11 @@ async def get_downloads(message):
     await bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
 
 
-async def get_rules(message):
-    # Функция загрузки правил
+async def get_downloads_all(message):
+    # Функция загрузки файлов
 
-    url = 'https://drive.google.com/uc?export=download&id=1O0gneqLQzETQ-Mn8SqsXqe0z7LY9vwIO'
-    await bot.send_message(message.from_user.id, 'документ загружается...')
-    await bot.send_document(message.from_user.id, url)
-
-
-async def get_pedia(message):
-    # Функции загрузки гидропедии
-
-    url = 'https://drive.google.com/uc?export=download&id=1WZHJQJ3NEDtm27jb1VMNkBWyT5wp2zZO'
-    await bot.send_message(message.from_user.id, 'документ загружается...')
-    await bot.send_document(message.from_user.id, url)
-
-
-async def get_faq(message):
-    # Функции загрузки гидропедии
-
-    url = 'https://drive.google.com/uc?export=download&id=1XAxfrmShesX-pzJdVsKdVCPEFCvNwbnK'
-    await bot.send_message(message.from_user.id, 'документ загружается...')
-    await bot.send_document(message.from_user.id, url)
-
-
-async def get_terrain(message):
-    # Функции загрузки гидропедии
-
-    url = 'https://drive.google.com/uc?export=download&id=1kIIVZD1hSC2Zng7Tdwk5f0vi2kQYpWI6'
-    await bot.send_message(message.from_user.id, 'документ загружается...')
-    await bot.send_document(message.from_user.id, url)
+    file = GetObjects(bot, message)
+    await file.get_file_url()
 
 
 async def get_drugs(message):
@@ -165,7 +143,7 @@ async def get_drugs(message):
 async def get_drugs_all(message):
     # Функция возвращает карты усилителей
 
-    drugs = GetCards(bot, message)
+    drugs = GetObjects(bot, message)
     await drugs.get_drug_card()
 
 
@@ -180,35 +158,35 @@ async def get_tactics(message):
 async def get_all_leaders(message):
     # Функция возвращает список всех карт Лидеров
 
-    l_cards = GetCards(bot, message)
+    l_cards = GetObjects(bot, message)
     await l_cards.get_leaders()
 
 
 async def get_devis(message):
     # Функция возвращает карты Дэвиса
 
-    devis = GetCards(bot, message)
+    devis = GetObjects(bot, message)
     await devis.get_leaders_card('Правительство - Дэвис')
 
 
 async def get_vinsent(message):
     # Функция возвращает карты Винсента
 
-    vinsent = GetCards(bot, message)
+    vinsent = GetObjects(bot, message)
     await vinsent.get_leaders_card('Синдикат - Винсент')
 
 
 async def get_firebrand(message):
     # Функция возвращает карты Заводилы
 
-    firebrand = GetCards(bot, message)
+    firebrand = GetObjects(bot, message)
     await firebrand.get_leaders_card('Синдикат - Заводила')
 
 
 async def get_tetsui(message):
     # Функция возвращает карты Тэцуи
 
-    tetsui = GetCards(bot, message)
+    tetsui = GetObjects(bot, message)
     await tetsui.get_leaders_card('Нисимура - Тэцуи')
 
 
@@ -232,28 +210,28 @@ async def get_random(message):
 async def get_all_units(message):
     # Функция навигации по персонажам всех Фракций
 
-    units = GetCards(bot, message)
+    units = GetObjects(bot, message)
     await units.get_units()
 
 
 async def get_syn(message):
     # Функция возвращает карты персонажей Синдиката
 
-    syn = GetCards(bot, message)
+    syn = GetObjects(bot, message)
     await syn.get_unit_card('Синдикат')
 
 
 async def get_nis(message):
     # Функция возвращает карты персонажей Нисимуры
 
-    nis = GetCards(bot, message)
+    nis = GetObjects(bot, message)
     await nis.get_unit_card('Нисимура')
 
 
 async def get_gov(message):
     # Функция возвращает карты персонажей Правительства
 
-    gov = GetCards(bot, message)
+    gov = GetObjects(bot, message)
     await gov.get_unit_card('Правительство')
 
 

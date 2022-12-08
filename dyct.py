@@ -6,12 +6,16 @@ d_commands = {
     'Тактики': 'get_tactics(message)',
     'Скачать': 'get_downloads(message)',
     'Рандомайзер': 'get_random(message)',
-    'Правила': 'get_rules(message)',
-    'Гидропедия': 'get_pedia(message)',
-    'FAQ': 'get_faq(message)',
-    'Террейн': 'get_terrain(message)',
     'назад - Лидеры': 'get_tactics(message)',
     'назад - Фракции': 'get_fractions(message)',
+}
+
+# словарь загрузок
+d_downloads = {
+    'Правила': 'https://drive.google.com/uc?export=download&id=1O0gneqLQzETQ-Mn8SqsXqe0z7LY9vwIO',
+    'Гидропедия': 'https://drive.google.com/uc?export=download&id=1WZHJQJ3NEDtm27jb1VMNkBWyT5wp2zZO',
+    'Террейн': 'https://drive.google.com/uc?export=download&id=1kIIVZD1hSC2Zng7Tdwk5f0vi2kQYpWI6',
+    'FAQ': 'https://drive.google.com/uc?export=download&id=1XAxfrmShesX-pzJdVsKdVCPEFCvNwbnK',
 }
 
 # словарь фракций
@@ -25,7 +29,7 @@ d_hydro = {
         'Патрульный': 'https://imgur.com/66GDxBr',
         'Инженер': 'https://imgur.com/d9Jbpvn',
         'Десантник': 'https://imgur.com/Cg3WDaI',
-        'Турель': 'https://imgur.com/jC1yWcG'
+        'Турель': 'https://imgur.com/jC1yWcG',
     },
     'Синдикат': {
         'Винсент': 'https://imgur.com/sgcUAQE',
@@ -37,7 +41,7 @@ d_hydro = {
         'Хакер': 'https://imgur.com/SIjjjXm',
         'Дилер': 'https://imgur.com/gEpWvmC',
         'Панк': 'https://imgur.com/67jy5Jf',
-        'Повстанец': 'https://imgur.com/sKsD3G7'
+        'Повстанец': 'https://imgur.com/sKsD3G7',
     },
     'Нисимура': {
         'Тэцуи': 'https://imgur.com/xAH3aCM',
@@ -53,8 +57,8 @@ d_hydro = {
         'Жук II': 'https://imgur.com/NJvAErJ',
         'Стрекоза I': 'https://imgur.com/GfGkYD6',
         'Стрекоза II': 'https://imgur.com/jl8ywgx',
-        'Безликий': 'https://imgur.com/zh2uW1N'
-    }
+        'Безликий': 'https://imgur.com/zh2uW1N',
+    },
 }
 
 # словарь миссий
@@ -62,7 +66,7 @@ d_mis = {
     'url_mis_down': 'https://imgur.com/FhBRQiv',
     'url_mis_grab': 'https://imgur.com/OVmrJDN',
     'url_mis_inv': 'https://imgur.com/wabdjWh',
-    'url_mis_hold': 'https://imgur.com/IO0wHLH'
+    'url_mis_hold': 'https://imgur.com/IO0wHLH',
 }
 
 # словарь расстановок
@@ -71,7 +75,7 @@ d_set = {
     'url_set_kl': 'https://imgur.com/gNxKqKW',
     'url_set_fl': 'https://imgur.com/Y6chgCJ',
     'url_set_fl_r': 'https://imgur.com/BmyrPsr',
-    'url_set_fl_l': 'https://imgur.com/TvFh6Oj'
+    'url_set_fl_l': 'https://imgur.com/TvFh6Oj',
 }
 
 # словарь лидеров
@@ -82,7 +86,7 @@ d_leaders = {
         'Железный Кеп': 'https://imgur.com/hI07iXJ',
         'Рейд': 'https://imgur.com/hJrhd45',
         'Досмотр': 'https://imgur.com/jctIul8',
-        'На Страже Закона': 'https://imgur.com/UTjlV0U'
+        'На Страже Закона': 'https://imgur.com/UTjlV0U',
     },
     'Синдикат - Винсент': {
         'Скрытая Угроза': 'https://imgur.com/RHWoEG0',
@@ -90,7 +94,7 @@ d_leaders = {
         'Поиски Правды': 'https://imgur.com/lFkh5je',
         'Раненый Зверь': 'https://imgur.com/hQnwgLT',
         'Еще Один "Джимии"': 'https://imgur.com/naQEOvv',
-        'Sentiment': 'https://imgur.com/Q0hqSSJ'
+        'Sentiment': 'https://imgur.com/Q0hqSSJ',
     },
     'Синдикат - Заводила': {
         'Митинг': 'https://imgur.com/xal8gdu',
@@ -98,7 +102,7 @@ d_leaders = {
         'Хард Рок': 'https://imgur.com/ypMbT0D',
         'Мой Район': 'https://imgur.com/3Gdcz7j',
         'Рэйв': 'https://imgur.com/z9162Eh',
-        'Заговорщик': 'https://imgur.com/KDwtqp2'
+        'Заговорщик': 'https://imgur.com/KDwtqp2',
     },
     'Нисимура - Тэцуи': {
         'Кумир': 'https://imgur.com/u1oSsWO',
@@ -106,8 +110,8 @@ d_leaders = {
         'Каток': 'https://imgur.com/M40L1NQ',
         'Зщита Данных': 'https://imgur.com/2snlIgT',
         'Мизантроп': 'https://imgur.com/S9kMac0',
-        'Мать Роя': 'https://imgur.com/2lTN2BL'
-    }
+        'Мать Роя': 'https://imgur.com/2lTN2BL',
+    },
 }
 
 # словарь усилителей
@@ -120,7 +124,7 @@ d_drugs = {
     'Кошкодер': 'https://imgur.com/ALAjfdE',
     'Циклон': 'https://imgur.com/K5qNaee',
     'Психоз': 'https://imgur.com/VDmdMrY',
-    'Зип': 'https://imgur.com/Tu7rCX2'
+    'Зип': 'https://imgur.com/Tu7rCX2',
 }
 
 # сообщения
