@@ -81,7 +81,7 @@ async def get_nav(message):
     if message.text in list(d_hydro):
         # Получить персонажей фракции
         await get_all_units(message)
-
+    # TODO: переписать логику поиска по ключу для навигации
     if message.text in list(d_hydro['Правительство']):
         # Получить карточки персонажей Правительства
         await get_gov(message)
@@ -167,6 +167,7 @@ async def get_all_units(message):
     await units.get_objects()
 
 
+# # TODO: переписать логику поиска по ключу для всех вызовов
 async def get_syn(message):
     # Функция возвращает карты персонажей Синдиката
 
@@ -205,7 +206,7 @@ async def get_firebrand(message):
     # Функция возвращает карты Заводилы
 
     firebrand = GetObjects(bot, message)
-    await firebrand.get_object_data('[T]Заводила')
+    await firebrand.get_object_data('[Т]Заводила')
 
 
 async def get_tetsui(message):
