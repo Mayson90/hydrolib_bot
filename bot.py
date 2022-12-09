@@ -18,8 +18,8 @@ text_messages = {
         u'Приветствую тебя, {name}!\n\n'
         u'Навигация по ГЛАВНОМУ МЕНЮ:\n\n'
         u'|ФРАКЦИИ| - навигация по персонажам фракций\n'
+        u'|[T]Лидер| - получить карты тактик\n'
         u'|УСИЛИТЕЛИ| - получить карты усилителей\n'
-        u'|ТАКТИКИ| - получить карты тактик\n'
         u'|СКАЧАТЬ| - скачать актуальные правила, FAQ и т.д.\n'
         u'|РАНДОМАЙЗЕР| - случайный выбор миссии и расстановки\n\n'
         u'кнопка |Главное Меню| снизу',
@@ -78,24 +78,10 @@ async def get_nav(message):
     if message.text in list(d_drugs):
         # Получить список усилителей
         await get_drugs_all(message)
-    if message.text in list(d_leaders):
-        # Получить список лидеров фракций
-        await get_all_leaders(message)
     if message.text in list(d_hydro):
         # Получить персонажей фракции
         await get_all_units(message)
-    if message.text in list(d_leaders['Правительство - Дэвис']):
-        # Получить карточки Дэвиса
-        await get_devis(message)
-    if message.text in list(d_leaders['Синдикат - Винсент']):
-        # Получить карточки Винсента
-        await get_vinsent(message)
-    if message.text in list(d_leaders['Синдикат - Заводила']):
-        # Получить карточки Заводилы
-        await get_firebrand(message)
-    if message.text in list(d_leaders['Нисимура - Тэцуи']):
-        # Получить карточки Тэцуи
-        await get_tetsui(message)
+    # TODO: переписать логику поиска по ключу для навигации
     if message.text in list(d_hydro['Правительство']):
         # Получить карточки персонажей Правительства
         await get_gov(message)
@@ -105,14 +91,25 @@ async def get_nav(message):
     if message.text in list(d_hydro['Нисимура']):
         # Получить карточки персонажей Нисимуры
         await get_nis(message)
+    if message.text in list(d_hydro['[Т]Дэвис']):
+        # Получить карточки Дэвиса
+        await get_devis(message)
+    if message.text in list(d_hydro['[Т]Винсент']):
+        # Получить карточки Винсента
+        await get_vinsent(message)
+    if message.text in list(d_hydro['[Т]Заводила']):
+        # Получить карточки Заводилы
+        await get_firebrand(message)
+    if message.text in list(d_hydro['[Т]Тэцуи']):
+        # Получить карточки Тэцуи
+        await get_tetsui(message)
 
 
 async def get_menu(message):
     # Функция главного меню
 
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row('Фракции', 'Усилители', 'Тактики')
-    markup.row('Скачать', 'Рандомайзер')
+    menu = list([key for key in d_commands.keys() if key not in 'Главное Меню'])
+    markup = create_menu(menu)
     await bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
 
 
@@ -121,7 +118,7 @@ async def get_downloads(message):
 
     menu = list(d_downloads.keys())
     markup = create_menu(menu)
-    await bot.send_message(message.from_user.id, 'Выбери категорию:', reply_markup=markup)
+    await bot.send_message(message.from_user.id, 'Выбери загрузку:', reply_markup=markup)
 
 
 async def get_downloads_all(message):
@@ -146,55 +143,12 @@ async def get_drugs_all(message):
     await drugs.get_drug_card()
 
 
-async def get_tactics(message):
-    # Функция навигации по тактикам лидеров фракций
-
-    menu = list(d_leaders.keys())
-    markup = create_menu(menu)
-    await bot.send_message(message.from_user.id, 'Выбери лидера:', reply_markup=markup)
-
-
-async def get_all_leaders(message):
-    # Функция возвращает список всех карт Лидеров
-
-    l_cards = GetObjects(bot, message)
-    await l_cards.get_leaders()
-
-
-async def get_devis(message):
-    # Функция возвращает карты Дэвиса
-
-    devis = GetObjects(bot, message)
-    await devis.get_leaders_card('Правительство - Дэвис')
-
-
-async def get_vinsent(message):
-    # Функция возвращает карты Винсента
-
-    vinsent = GetObjects(bot, message)
-    await vinsent.get_leaders_card('Синдикат - Винсент')
-
-
-async def get_firebrand(message):
-    # Функция возвращает карты Заводилы
-
-    firebrand = GetObjects(bot, message)
-    await firebrand.get_leaders_card('Синдикат - Заводила')
-
-
-async def get_tetsui(message):
-    # Функция возвращает карты Тэцуи
-
-    tetsui = GetObjects(bot, message)
-    await tetsui.get_leaders_card('Нисимура - Тэцуи')
-
-
 async def get_fractions(message):
     # Функция навигации по фракциям
 
     menu = list(d_hydro.keys())
     markup = create_menu(menu)
-    await bot.send_message(message.from_user.id, 'Выбери фракцию:', reply_markup=markup)
+    await bot.send_message(message.from_user.id, 'Выбери меню:', reply_markup=markup)
 
 
 async def get_random(message):
@@ -210,28 +164,57 @@ async def get_all_units(message):
     # Функция навигации по персонажам всех Фракций
 
     units = GetObjects(bot, message)
-    await units.get_units()
+    await units.get_objects()
 
 
+# # TODO: переписать логику поиска по ключу для всех вызовов
 async def get_syn(message):
     # Функция возвращает карты персонажей Синдиката
 
     syn = GetObjects(bot, message)
-    await syn.get_unit_card('Синдикат')
+    await syn.get_object_data('Синдикат')
 
 
 async def get_nis(message):
     # Функция возвращает карты персонажей Нисимуры
 
     nis = GetObjects(bot, message)
-    await nis.get_unit_card('Нисимура')
+    await nis.get_object_data('Нисимура')
 
 
 async def get_gov(message):
     # Функция возвращает карты персонажей Правительства
 
     gov = GetObjects(bot, message)
-    await gov.get_unit_card('Правительство')
+    await gov.get_object_data('Правительство')
+
+async def get_devis(message):
+    # Функция возвращает карты Дэвиса
+
+    devis = GetObjects(bot, message)
+    await devis.get_object_data('[Т]Дэвис')
 
 
+async def get_vinsent(message):
+    # Функция возвращает карты Винсента
+
+    vinsent = GetObjects(bot, message)
+    await vinsent.get_object_data('[Т]Винсент')
+
+
+async def get_firebrand(message):
+    # Функция возвращает карты Заводилы
+
+    firebrand = GetObjects(bot, message)
+    await firebrand.get_object_data('[Т]Заводила')
+
+
+async def get_tetsui(message):
+    # Функция возвращает карты Тэцуи
+
+    tetsui = GetObjects(bot, message)
+    await tetsui.get_object_data('[Т]Тэцуи')
+
+
+# воркер бота
 asyncio.run(bot.polling(non_stop=True))
