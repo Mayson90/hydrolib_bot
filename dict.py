@@ -59,7 +59,7 @@ d_hydro = {
     '[Т]Дэвис': {
         'Усмирение': 'https://i.imgur.com/BF5y7WL.png',
         'Старый Солдат': 'https://i.imgur.com/mcN9MvI.png',
-        'Железный Кеп': 'https://imgur.com/hI07iXJ',
+        'Железный Кеп': 'https://i.imgur.com/hI07iXJ.png',
         'Рейд': 'https://i.imgur.com/hJrhd45.png',
         'Досмотр': 'https://i.imgur.com/jctIul8.png',
         'На Страже Закона': 'https://i.imgur.com/UTjlV0U.png',
