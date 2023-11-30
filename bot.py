@@ -7,7 +7,7 @@ from telebot import types
 
 from conf import token
 import db_users
-from dyct import *
+from dict import *
 from func import create_menu, GetObjects
 
 

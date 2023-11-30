@@ -1,6 +1,6 @@
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
-from dyct import d_hydro, d_drugs, d_downloads
+from dict import d_hydro, d_drugs, d_downloads
 
 
 def create_menu(menu):

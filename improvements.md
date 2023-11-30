@@ -17,6 +17,7 @@
 
 - [x] async using
 - [ ] telegram -> com/val to local objects -> bot logic -> bot answer to telegram API -> answer to telegram
+- [ ] use db instead python dictionary
 
 ## CI/CD
 
